@@ -53,13 +53,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  /* mesmo font-size do .text — "ch" é relativo à fonte do próprio elemento,
-     então precisa bater pra dar a mesma largura em px */
   font-size: 14px;
   max-width: 52ch;
 }
 
-/* .cursor é a classe global de src/index.css */
+
 
 @media (max-width: 860px) {
   .inner {

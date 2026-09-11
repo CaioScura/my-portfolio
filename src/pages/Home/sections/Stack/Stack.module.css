@@ -1,0 +1,49 @@
+.stack {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: clamp(80px, 12vh, 140px) clamp(20px, 4vw, 48px);
+}
+
+.inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.intro {
+  max-width: 82ch;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-dim);
+  margin: 0 0 16px;
+}
+
+.text:last-child {
+  margin-bottom: 0;
+}
+
+.groups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 760px) {
+  .groups {
+    grid-template-columns: 1fr;
+  }
+}

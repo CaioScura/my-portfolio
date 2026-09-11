@@ -1,0 +1,56 @@
+.group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 20px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.group:hover {
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+}
+
+.groupTitle {
+  margin: 0 0 18px;
+  font-size: 16px;
+  color: var(--accent);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 24px;
+  row-gap: 14px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.icon {
+  display: flex;
+  flex-shrink: 0;
+  font-size: 24px;
+  color: var(--text-dim);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  margin-left: -2px;
+  font-size: 14px;
+  color: var(--text-dimmer);
+  transition: color 0.2s ease;
+}
+
+.info:hover {
+  color: var(--accent);
+}
