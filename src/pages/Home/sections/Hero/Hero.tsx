@@ -65,12 +65,7 @@ const Hero = () => {
                             LinkedIn
                         </a>
 
-                        <a
-                            className={styles.social}
-                            href="#"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
+                        <a className={styles.social} href="#contato">
                             <IoIosContact aria-hidden />
                             Contato
                         </a>
