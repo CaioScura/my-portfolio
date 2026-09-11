@@ -1,4 +1,7 @@
 .about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   padding: clamp(80px, 12vh, 140px) clamp(20px, 4vw, 48px);
 }
 
