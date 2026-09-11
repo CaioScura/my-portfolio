@@ -42,8 +42,34 @@
   gap: 24px;
 }
 
+.certificates {
+  margin-top: 56px;
+}
+
+.certTitle {
+  margin: 0 0 20px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.certGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
 @media (max-width: 760px) {
   .groups {
+    grid-template-columns: 1fr;
+  }
+
+  .certGrid {
     grid-template-columns: 1fr;
   }
 }

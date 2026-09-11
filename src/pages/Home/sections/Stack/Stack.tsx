@@ -1,5 +1,8 @@
 import styles from './Stack.module.css'
 import StackGroup from '../../../../components/stack-group/StackGroup'
+import CertificateCard from '../../../../components/certificate-card/CertificateCard'
+import EngenhariaSoftwarePdf from '../../../../assets/images/certificados/Engenharia de Software.pdf'
+import UiParaDevsPdf from '../../../../assets/images/certificados/UI para devs.pdf'
 import {
     SiReact,
     SiTypescript,
@@ -34,6 +37,11 @@ const tools = [
     { icon: <SiGit />, label: 'Git' },
 ]
 
+const certificates = [
+    { title: 'Engenharia de Software', hours: '86h', platform: 'Alura', pdf: EngenhariaSoftwarePdf },
+    { title: 'UI para Devs', hours: '24h', platform: 'Alura', pdf: UiParaDevsPdf },
+]
+
 const Stack = () => {
     return (
         <section className={styles.stack} id="stack">
@@ -61,6 +69,16 @@ const Stack = () => {
                     <StackGroup title="Frontend" items={frontend} />
                     <StackGroup title="Backend" items={backend} />
                     <StackGroup title="Ferramentas" items={tools} />
+                </div>
+
+                <div className={styles.certificates}>
+                    <h3 className={styles.certTitle}>Certificados em destaque</h3>
+
+                    <div className={styles.certGrid}>
+                        {certificates.map((cert) => (
+                            <CertificateCard key={cert.title} {...cert} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
