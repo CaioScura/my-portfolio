@@ -62,15 +62,6 @@
 }
 
 
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 16px;
-  margin-bottom: clamp(22px, 4vh, 40px);
-  color: var(--text-dim);
-}
-
 /* foto */
 .photo {
   width: 160px;
@@ -78,13 +69,7 @@
   margin-bottom: 32px;
 }
 
-.title {
-  margin: 0;
-  font-size: clamp(2.75rem, 6vw, 6rem);
-  font-weight: 600;
-  line-height: 0.98;
-  color: var(--text);
-}
+/* .welcome / .title agora vivem em src/components/typed-heading */
 
 .tagline {
   margin-top: 26px;
@@ -131,81 +116,11 @@
 }
 
 
-/* ---------- Right column: code window ---------- */
-.window {
-  position: relative;
-  background: rgba(17, 17, 22, 0.55);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid var(--accent-border);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+/* Coluna direita: o visual da janela de código vive no componente
+   CodeWindow (src/components/code-window). Aqui só cuidamos do slot/layout. */
+.windowSlot {
+  min-width: 0;
 }
-
-.bar {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 13px 18px;
-  background: rgba(25, 25, 32, 0.5);
-  border-bottom: 1px solid var(--border);
-}
-
-.dots {
-  display: flex;
-  gap: 7px;
-}
-
-.dots span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #3a3a3a;
-}
-
-.file {
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  color: var(--text-dim);
-}
-
-.code {
-  margin: 0;
-  padding: 26px 24px;
-  font-family: var(--font-mono);
-  font-size: 13.5px;
-  line-height: 1.9;
-  color: var(--text-dim);
-  overflow-x: auto;
-}
-
-.name {
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.str {
-  color: #b9b9d6;
-}
-
-.cursor {
-  color: var(--accent);
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  0%,
-  49% {
-    opacity: 1;
-  }
-  50%,
-  100% {
-    opacity: 0;
-  }
-}
-
 
 /* ---------- Responsive ---------- */
 
@@ -215,7 +130,7 @@
     gap: 48px;
   }
 
-  .window {
+  .windowSlot {
     order: 2;
   }
 }

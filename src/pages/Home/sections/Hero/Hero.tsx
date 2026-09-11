@@ -3,29 +3,46 @@ import { FaGithub } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import { IoIosContact } from 'react-icons/io';
 import { TiDocumentText } from 'react-icons/ti';
-// Foto desativada por enquanto — reative importando o avatar e o <img> abaixo.
+import CodeWindow, { type CodeToken } from '../../../../components/code-window/CodeWindow'
+import MsgWelcome from '../../../../components/msg-welcome/MsgWelcome'
+// sem foto por enquanto
 // import Avatar from '../../../../assets/images/avatar.png'
+
+// conteudo do code window
+const codeTokens: CodeToken[] = [
+    { text: 'const ' },
+    { text: 'caio', cls: 'name' },
+    { text: ' = {\n  role: ' },
+    { text: "'software developer'", cls: 'str' },
+    { text: ',\n  focus: [' },
+    { text: "'frontend'", cls: 'str' },
+    { text: ', ' },
+    { text: "'backend'", cls: 'str' },
+    { text: ', ' },
+    { text: "'design'", cls: 'str' },
+    { text: '],\n  stack: ' },
+    { text: "'React, TypeScript, JavaScript, Laravel, PHP'", cls: 'str' },
+    { text: '\n};\n\n' },
+    { text: 'caio', cls: 'name' },
+    { text: '.create(' },
+    { text: "'creative interfaces'", cls: 'str' },
+    { text: ');' },
+]
 
 const Hero = () => {
     return (
         <section className={styles.hero}>
             <div className={styles.inner}>
                 <div className={styles.content}>
-                    {/* <p className={styles.eyebrow}>
-                        Caio Scura, Software Engineer
-                    </p> */}
+                    <MsgWelcome welcomeText="Welcome to my portfolio" titleText="Desenvolvedor Full Stack" />
 
                     {/* <img className={styles.photo} src={Avatar} alt="Caio Scura" /> */}
 
-                    <h1 className={styles.title}>
-                        Desenvolvedor <span>Full Stack</span>
-                    </h1>
-
                     <p className={styles.tagline}>
-                        Gosto de transformar ideias em interfaces criativas, 
-                         intuitivas e funcionais, criando soluções completas com código limpo, 
-                         organizado e componentizado.
-                         </p>
+                        Gosto de transformar ideias em interfaces criativas,
+                        intuitivas e funcionais, criando soluções completas com código limpo,
+                        organizado e componentizado.
+                    </p>
 
                     <div className={styles.socials}>
                         <a
@@ -68,40 +85,11 @@ const Hero = () => {
                             Download CV
                         </a>
                     </div>
-                    
+
                 </div>
 
-                <div className={styles.window}>
-                    <div className={styles.bar}>
-                        <div className={styles.dots}>
-                            <span />
-                            <span />
-                            <span />
-                        </div>
-                        <span className={styles.file}>caio-portfolio.js</span>
-                    </div>
-
-                    <pre className={styles.code}>
-                        {'const '}
-                        <span className={styles.name}>caio</span>
-                        {' = {\n  role: '}
-                        <span className={styles.str}>'software developer'</span>
-                        {',\n  focus: ['}
-                        <span className={styles.str}>'frontend'</span>
-                        {', '}
-                        <span className={styles.str}>'backend'</span>
-                        {', '}
-                        <span className={styles.str}>'design'</span>
-                        {'],\n  stack: '}
-                        <span className={styles.str}>'React, TypeScript, JavaScript, Laravel, PHP'</span>
-                        {'\n};\n\n'}
-                        <span className={styles.name}>caio</span>
-                        {'.create('}
-                        <span className={styles.str}>'creative interfaces'</span>
-                        {');'}
-                        <span className={styles.cursor}>_</span>
-                    </pre>
-
+                <div className={styles.windowSlot}>
+                    <CodeWindow fileName="caio-portfolio.js" tokens={codeTokens} />
                 </div>
             </div>
         </section>
