@@ -1,0 +1,79 @@
+:root {
+  --bg: #0a0a0a;
+  --surface: #111111;
+  --surface-2: #191919;
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #f4f4f4;
+  --text-dim: #8a8a8a;
+  --text-dimmer: #5a5a5a;
+  --online: #4ade80;
+
+  /* Azul-roxo leve (periwinkle) — acento sobre o preto/cinza */
+  --accent: #8b8cf5;
+  --accent-dim: #6d6ce0;
+  --accent-border: rgba(139, 140, 245, 0.28);
+  --accent-soft: rgba(139, 140, 245, 0.12);
+  --accent-glow: rgba(109, 108, 224, 0.18);
+
+  --font-sans: 'Poppins', 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: var(--text);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: 1px solid #f4f4f4;
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Vidro fosco: precisa de algo colorido ATRÁS (ver os glows do Hero) para o
+   blur aparecer. Sozinho, sobre fundo liso, o efeito fica invisível. */
+.glass {
+  background: rgba(17, 17, 22, 0.55);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid var(--accent-border);
+  border-radius: 16px;
+}

@@ -1,55 +1,110 @@
-import { Button, Container, Grid, styled, Typography } from '@mui/material'
-import Avatar from "../../../../assets/images/avatar.png"
-import DownloadIcon from '@mui/icons-material/Download';
-import MailIcon from '@mui/icons-material/Mail';
+import styles from './Hero.module.css'
+import { FaGithub } from "react-icons/fa";
+import { CiLinkedin } from "react-icons/ci";
+import { IoIosContact } from 'react-icons/io';
+import { TiDocumentText } from 'react-icons/ti';
+// Foto desativada por enquanto — reative importando o avatar e o <img> abaixo.
+// import Avatar from '../../../../assets/images/avatar.png'
 
 const Hero = () => {
-
-    const StyledHero = styled("div")(() => ({
-        backgroundColor: "black",
-        height: "100vh",
-    }))
-
-    const StyledImg = styled("img")(() => ({
-        width: "100%",
-        borderRadius: "50%",
-    }))
-
     return (
-        <>
-            <StyledHero>
+        <section className={styles.hero}>
+            <div className={styles.inner}>
+                <div className={styles.content}>
+                    {/* <p className={styles.eyebrow}>
+                        Caio Scura, Software Engineer
+                    </p> */}
 
-                <Container maxWidth="lg">
-                    <Grid container spacing={2}>
-                        <Grid size={{ xs: 12, md: 4 }}>
-                            <StyledImg src={Avatar} alt="Avatar" />
-                        </Grid>
-                        
-                        <Grid size={{ xs: 12, md: 8 }}>
-                            <Typography color='primary' variant='h1' sx={{ textAlign: 'center' }}>Caio Scura</Typography>
-                            <Typography color='primary' variant='h2' sx={{ textAlign: 'center' }}>I'm Software Enginner</Typography>
+                    {/* <img className={styles.photo} src={Avatar} alt="Caio Scura" /> */}
 
-                            <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
-                                <Grid size={{ xs: 12, md: 4 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-                                    <Button>
-                                    <DownloadIcon/>
-                                    Download CV
-                                    </Button>
-                                </Grid>
+                    <h1 className={styles.title}>
+                        Desenvolvedor <span>Full Stack</span>
+                    </h1>
 
-                                <Grid size={{ xs: 12, md: 4 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-                                    <Button>
-                                    <MailIcon/>
-                                    Contact me
-                                    </Button>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Container>
+                    <p className={styles.tagline}>
+                        Gosto de transformar ideias em interfaces criativas, 
+                         intuitivas e funcionais, criando soluções completas com código limpo, 
+                         organizado e componentizado.
+                         </p>
 
-            </StyledHero>
-        </>
+                    <div className={styles.socials}>
+                        <a
+                            className={styles.social}
+                            href="https://github.com/CaioScura"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <FaGithub aria-hidden />
+                            GitHub
+                        </a>
+
+                        <a
+                            className={styles.social}
+                            href="https://www.linkedin.com/in/caio-scura/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <CiLinkedin aria-hidden />
+                            LinkedIn
+                        </a>
+
+                        <a
+                            className={styles.social}
+                            href="#"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <IoIosContact aria-hidden />
+                            Contato
+                        </a>
+
+                        <a
+                            className={styles.social}
+                            href="#"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <TiDocumentText aria-hidden />
+                            Download CV
+                        </a>
+                    </div>
+                    
+                </div>
+
+                <div className={styles.window}>
+                    <div className={styles.bar}>
+                        <div className={styles.dots}>
+                            <span />
+                            <span />
+                            <span />
+                        </div>
+                        <span className={styles.file}>caio-portfolio.js</span>
+                    </div>
+
+                    <pre className={styles.code}>
+                        {'const '}
+                        <span className={styles.name}>caio</span>
+                        {' = {\n  role: '}
+                        <span className={styles.str}>'software developer'</span>
+                        {',\n  focus: ['}
+                        <span className={styles.str}>'frontend'</span>
+                        {', '}
+                        <span className={styles.str}>'backend'</span>
+                        {', '}
+                        <span className={styles.str}>'design'</span>
+                        {'],\n  stack: '}
+                        <span className={styles.str}>'React, TypeScript, JavaScript, Laravel, PHP'</span>
+                        {'\n};\n\n'}
+                        <span className={styles.name}>caio</span>
+                        {'.create('}
+                        <span className={styles.str}>'creative interfaces'</span>
+                        {');'}
+                        <span className={styles.cursor}>_</span>
+                    </pre>
+
+                </div>
+            </div>
+        </section>
     )
 }
 
