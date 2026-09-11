@@ -21,13 +21,13 @@ const frontend = [
     { icon: <SiReact />, label: 'React' },
     { icon: <SiTypescript />, label: 'TypeScript' },
     { icon: <SiJavascript />, label: 'JavaScript' },
-    { icon: <SiAngular />, label: 'Angular', note: 'Sigo estudando' },
+    { icon: <SiAngular />, label: 'Angular', note: 'estudando' },
     { icon: <SiLivewire />, label: 'Livewire' },
 ]
 
 const backend = [
     { icon: <SiLaravel />, label: 'Laravel' },
-    { icon: <SiSpringboot />, label: 'Spring Boot', note: 'Sigo estudando' },
+    { icon: <SiSpringboot />, label: 'Spring Boot', note: 'estudando' },
     { icon: <SiPhp />, label: 'PHP' },
 ]
 

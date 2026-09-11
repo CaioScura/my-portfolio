@@ -49,10 +49,10 @@
 .certTitle {
   margin: 0 0 20px;
   text-align: center;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  /* font-family: var(--font-mono); */
+  font-size: 16px;
+  /* letter-spacing: 0.14em; */
+  /* text-transform: uppercase; */
   color: var(--text-dim);
 }
 

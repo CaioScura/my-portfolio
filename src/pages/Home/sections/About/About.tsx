@@ -15,8 +15,8 @@ const About = () => {
                     <h2 className={styles.title}>Sobre mim<span className="cursor">_</span></h2>
 
                     <p className={styles.text}>
-                        Sou desenvolvedor Full Stack, formado em <b>Análise e Desenvolvimento de Sistemas</b>  
-                        pela Fatec Itapetininga. Tenho experiência no desenvolvimento de aplicações web, 
+                        Sou desenvolvedor Full Stack, formado em <b>Análise e Desenvolvimento de Sistemas </b>  
+                         pela Fatec Itapetininga. Tenho experiência no desenvolvimento de aplicações web, 
                         atuando principalmente na criação de interfaces, funcionalidades e integrações 
                         entre sistemas.
                     </p>
