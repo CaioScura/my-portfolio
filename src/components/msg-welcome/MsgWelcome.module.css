@@ -13,18 +13,4 @@
   color: var(--text);
 }
 
-.cursor {
-  color: var(--accent);
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  0%,
-  49% {
-    opacity: 1;
-  }
-  50%,
-  100% {
-    opacity: 0;
-  }
-}
+/* .cursor é a classe global de src/index.css */

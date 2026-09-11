@@ -1,16 +1,18 @@
 import styles from './About.module.css'
 import Avatar from '../../../../assets/images/avatar.png'
+import { FaMedal, FaGraduationCap } from 'react-icons/fa'
+import InfoCard from '../../../../components/info-card/InfoCard'
 
 const About = () => {
     return (
-        <section className={styles.about}>
+        <section className={styles.about} id="sobre">
             <div className={styles.inner}>
                 <div className={styles.photoCol}>
                     <img className={styles.photo} src={Avatar} alt="Caio Scura" />
                 </div>
 
                 <div className={styles.content}>
-                    <h2 className={styles.title}>Sobre mim<span className={styles.cursor}>_</span></h2>
+                    <h2 className={styles.title}>Sobre mim<span className="cursor">_</span></h2>
 
                     <p className={styles.text}>
                         Sou desenvolvedor Full Stack, formado em <b>Análise e Desenvolvimento de Sistemas</b>  
@@ -31,6 +33,20 @@ const About = () => {
                         evoluindo como desenvolvedor, explorando novas tecnologias e formas de criar experiências 
                         digitais cada vez melhores.
                     </p>
+
+                    <div className={styles.cards}>
+                        <InfoCard
+                            icon={<FaMedal />}
+                            title="Experiência"
+                            lines={['3 anos', 'Desenvolvimento Full Stack']}
+                        />
+
+                        <InfoCard
+                            icon={<FaGraduationCap />}
+                            title="Educação"
+                            lines={['Análise e Desenvolvimento de Sistemas']}
+                        />
+                    </div>
                 </div>
             </div>
         </section>

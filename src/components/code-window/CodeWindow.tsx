@@ -69,7 +69,7 @@ const CodeWindow = ({ fileName, tokens, typeSpeed = 50 }: CodeWindowProps) => {
 
             <pre className={styles.code}>
                 {renderedCode}
-                <span className={styles.cursor}>_</span>
+                <span className="cursor">_</span>
             </pre>
         </div>
     )

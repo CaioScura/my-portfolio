@@ -45,12 +45,12 @@ const MsgWelcome = ({ welcomeText, titleText, typeSpeed = 35, holdTime = 700 }: 
         <>
             <p className={styles.welcome}>
                 {welcomeTyped}
-                {!welcomeDone && <span className={styles.cursor}>_</span>}
+                {!welcomeDone && <span className="cursor">_</span>}
             </p>
 
             <h1 className={styles.title}>
                 {titleTyped}
-                {welcomeDone && <span className={styles.cursor}>_</span>}
+                {welcomeDone && <span className="cursor">_</span>}
             </h1>
         </>
     )
