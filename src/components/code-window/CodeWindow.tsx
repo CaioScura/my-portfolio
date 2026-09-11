@@ -10,7 +10,7 @@ interface CodeWindowProps {
 }
 
 // janela de digitacao
-const CodeWindow = ({ fileName, tokens, typeSpeed = 30 }: CodeWindowProps) => {
+const CodeWindow = ({ fileName, tokens, typeSpeed = 50 }: CodeWindowProps) => {
     const codeLength = useMemo(
         () => tokens.reduce((sum, token) => sum + token.text.length, 0),
         [tokens]

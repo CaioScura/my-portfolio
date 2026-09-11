@@ -68,6 +68,11 @@ a {
   text-decoration: none;
 }
 
+b{
+  font-weight: 700;
+  color: var(--accent);
+}
+
 /* Vidro fosco: precisa de algo colorido ATRÁS (ver os glows do Hero) para o
    blur aparecer. Sozinho, sobre fundo liso, o efeito fica invisível. */
 .glass {
