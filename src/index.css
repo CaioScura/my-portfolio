@@ -38,6 +38,11 @@
   margin: 0;
 }
 
+.icon-portifolio{
+  border-radius: 50%;
+  
+}
+
 html,
 body {
   min-height: 100%;

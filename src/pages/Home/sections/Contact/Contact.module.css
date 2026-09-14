@@ -13,7 +13,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 0.8fr 1fr;
+  grid-template-columns: 0.8fr 1fr 0.8fr;
   gap: 32px;
   max-width: 1200px;
   margin: 0 auto;
