@@ -11,6 +11,7 @@
 .card:hover {
   transform: translateY(-4px);
   border-color: var(--accent-border);
+  cursor: pointer;
 }
 
 .image {

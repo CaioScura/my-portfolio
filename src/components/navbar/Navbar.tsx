@@ -42,14 +42,18 @@ const Navbar = () => {
         </ul>
 
         {/* botao de idioma no mobile */}
-        <button className={`${styles.lang} ${styles.langInMenu}`} type="button">
+        <button style={{ display: 'none' }} className={`${styles.lang} ${styles.langInMenu}`} type="button">
           EN
         </button>
       </nav>
 
       <div className={styles.right}>
         {/* botao de idioma no desktop */}
-        <button className={`${styles.lang} ${styles.langInBar}`} type="button">
+        <button
+          title="Ainda não disponível em outro idioma"
+          className={`${styles.lang} ${styles.langInBar}`}
+          type="button"
+        >
           EN
         </button>
 
