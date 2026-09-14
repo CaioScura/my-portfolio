@@ -5,8 +5,10 @@ import { IoIosContact } from 'react-icons/io';
 import { TiDocumentText } from 'react-icons/ti';
 import CodeWindow, { type CodeToken } from '../../../../components/code-window/CodeWindow'
 import MsgWelcome from '../../../../components/msg-welcome/MsgWelcome'
+import CurriculoPdf from '../../../../assets/images/curriculo/CAIO ROBERTO RUIVO SCURA PEREIRA - desenvolvedor.pdf'
 // sem foto por enquanto
 // import Avatar from '../../../../assets/images/avatar.png'
+import Avatar from '../../../../assets/images/perfil-draw.png'
 
 // conteudo do code window
 const codeTokens: CodeToken[] = [
@@ -72,9 +74,8 @@ const Hero = () => {
 
                         <a
                             className={styles.social}
-                            href="#"
-                            target="_blank"
-                            rel="noreferrer"
+                            href={CurriculoPdf}
+                            download="Caio-Scura-Curriculo.pdf"
                         >
                             <TiDocumentText aria-hidden />
                             Download CV
@@ -83,9 +84,13 @@ const Hero = () => {
 
                 </div>
 
-                <div className={styles.windowSlot}>
-                    <CodeWindow fileName="caio-portfolio.js" tokens={codeTokens} />
+                <div className={styles.divPhoto}>
+                    <img className={styles.photo} src={Avatar} alt="Caio Scura" />
                 </div>
+
+                {/* <div className={styles.windowSlot}>
+                    <CodeWindow fileName="caio-portfolio.js" tokens={codeTokens} />
+                </div> */}
             </div>
         </section>
     )
