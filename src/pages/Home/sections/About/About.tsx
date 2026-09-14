@@ -19,7 +19,7 @@ const codeTokens: CodeToken[] = [
     { text: "'design'", cls: 'str' },
     { text: '],\n  stack: ' },
     { text: "'React, TypeScript, JavaScript, Laravel, PHP'", cls: 'str' },
-    { text: ',\n  tools: [' },
+    { text: ',\n  tools: ' },
     { text: "'git'", cls: 'str' },
     { text: ', ' },
     { text: "'claude code'", cls: 'str' },

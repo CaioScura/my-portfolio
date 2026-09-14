@@ -6,19 +6,43 @@ import { MailIcon, ArrowUpRightIcon } from '../../../../components/icons/Icons'
 
 const EMAIL = 'caioruivo02@gmail.com'
 
+type Status = 'idle' | 'sending' | 'success' | 'error'
+
 const Contact = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
+    const [status, setStatus] = useState<Status>('idle')
 
-    // sem backend por enquanto: abre o cliente de e-mail do usuário já preenchido
-    const handleSubmit = (e: FormEvent) => {
+    // envia direto pro e-mail via Web3Forms (sem precisar de backend próprio)
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault()
+        setStatus('sending')
 
-        const subject = encodeURIComponent(`Contato via portfólio — ${name || 'sem nome'}`)
-        const body = encodeURIComponent(`Nome: ${name}\nE-mail: ${email}\n\n${message}`)
+        try {
+            const res = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+                    subject: `Contato via portfólio — ${name}`,
+                    name,
+                    email,
+                    message,
+                }),
+            })
 
-        window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`
+            const data = await res.json()
+
+            if (!data.success) throw new Error(data.message)
+
+            setStatus('success')
+            setName('')
+            setEmail('')
+            setMessage('')
+        } catch {
+            setStatus('error')
+        }
     }
 
     return (
@@ -73,10 +97,21 @@ const Contact = () => {
                             />
                         </div>
 
-                        <button className={styles.submit} type="submit">
-                            Enviar mensagem
+                        <button className={styles.submit} type="submit" disabled={status === 'sending'}>
+                            {status === 'sending' ? 'Enviando...' : 'Enviar mensagem'}
                             <ArrowUpRightIcon />
                         </button>
+
+                        {status === 'success' && (
+                            <p className={styles.feedbackSuccess}>Mensagem enviada! Retorno em breve.</p>
+                        )}
+
+                        {status === 'error' && (
+                            <p className={styles.feedbackError}>
+                                Não deu pra enviar agora. Tenta de novo ou manda um e-mail direto pra{' '}
+                                <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
+                            </p>
+                        )}
                     </form>
 
                     <div className={styles.channels}>
