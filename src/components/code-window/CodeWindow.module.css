@@ -44,7 +44,12 @@
   font-size: 13.5px;
   line-height: 1.9;
   color: var(--text-dim);
-  overflow-x: auto;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 .name {

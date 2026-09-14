@@ -21,10 +21,13 @@
   justify-content: center;
 }
 
-.photo {
+/* moldura da foto minha com o mesmo tamanho do flipcard */
+.photoFrame {
   width: 100%;
   max-width: 380px;
+  aspect-ratio: 3 / 4;
   border-radius: 16px;
+  overflow: hidden;
   border: 1px solid var(--accent-border);
 }
 
