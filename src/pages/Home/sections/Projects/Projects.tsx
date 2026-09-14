@@ -16,7 +16,7 @@ const img = (filename: string) =>
     projectImages[`../../../../assets/images/projetos/${filename}`]
 
 
-
+//conteudo dos cards dos projetos
 const projects: ProjectCardProps[] = [
     {
         category: 'Full Stack',
@@ -24,21 +24,26 @@ const projects: ProjectCardProps[] = [
         description: 'Mood Player que recomenda e reproduz músicas curtidas do Spotify de acordo com o humor escolhido. O projeto foi desenvolvido para explorar o consumo da API do Spotify, autenticação e configuração da aplicação, além de práticas de deploy com Docker e Render.',
         stack: ['Bootstrap', 'CSS', 'JavaScript', 'Laravel', 'OAuth 2.0', 'Spotify Web API'],
         image: img('img-prj-api-spotify.png'),
+        repoUrl: 'https://github.com/CaioScura/API_Spotify',
     },
     {
         category: 'Front-end',
         title: 'Movie APP Filmes e Séries',
         description: 'Aplicação para explorar filmes, séries e animes, integrada a diferentes APIs para consulta e exibição de conteúdos. O projeto utiliza componentização e separação de serviços, buscando manter o código organizado, reutilizável e escalável.',
         stack: ['React', 'Next.js', 'Typescript', 'SCSS', 'API'],
-        image: img('img-movies-app.png')
+        image: img('img-movies-app.png'),
+        repoUrl: 'https://github.com/CaioScura/movies-app',
+        liveUrl: 'https://movies-app-caiote.vercel.app/',
     },
     {
         category: 'Back-end',
-        title: 'Projeto 3',
-        description: 'Breve descrição do projeto: o problema que ele resolve, principais funcionalidades e destaques técnicos.',
-        stack: ['Laravel', 'PHP', 'MySQL'],
+        title: 'Sistema de Gestão de Fornecedores',
+        description: 'Sistema desenvolvido em Java para gerenciamento de fornecedores, com operações de cadastro, alteração, exclusão e consulta. A aplicação utiliza JDBC para conexão com o banco de dados e uma interface gráfica para interação com o usuário.',
+        stack: ['Java', 'JDBC', 'SQL', 'POO', 'MySQL'],
+        repoUrl: 'https://github.com/CaioScura/prjJavaFornecedoresJDBC'
     },
 ]
+
 
 const Projects = () => {
     const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
