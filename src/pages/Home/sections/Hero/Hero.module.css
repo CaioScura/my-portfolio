@@ -6,6 +6,7 @@
   padding: clamp(120px, 16vh, 190px) clamp(20px, 4vw, 48px) 90px;
   overflow: hidden;
   isolation: isolate;
+  border-bottom: 1px solid var(--border);
 }
 
 

@@ -75,6 +75,13 @@
   color: var(--accent);
 }
 
+.tech:hover{
+  /* background-color: var(--accent); */
+  /* color: #fefefe; */
+  cursor: pointer;
+  /* transition: background 0.2s ease-in; */
+}
+
 .links {
   display: flex;
   gap: 10px;
