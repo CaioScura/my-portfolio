@@ -1,4 +1,4 @@
-import { FiImage } from 'react-icons/fi'
+import { FiImage, FiInfo } from 'react-icons/fi'
 import { FaGithub } from 'react-icons/fa'
 import { ArrowUpRightIcon } from '../icons/Icons'
 import styles from './ProjectCard.module.css'
@@ -15,9 +15,12 @@ export interface ProjectCardProps {
 
     //link do projeto no ar
     liveUrl?: string
+
+    //texto do tooltip em info ao lado do titulo
+    note?: string
 }
 
-const ProjectCard = ({ image, category, title, description, stack, repoUrl, liveUrl }: ProjectCardProps) => {
+const ProjectCard = ({ image, category, title, description, stack, repoUrl, liveUrl, note }: ProjectCardProps) => {
     return (
         <article className={styles.card}>
             {image ? (
@@ -30,7 +33,16 @@ const ProjectCard = ({ image, category, title, description, stack, repoUrl, live
 
             <div className={styles.body}>
                 <p className={styles.category}>{category}</p>
-                <h3 className={styles.title}>{title}</h3>
+
+                <h3 className={styles.title}>
+                    {title}
+                    {note && (
+                        <span className={styles.info} title={note}>
+                            <FiInfo />
+                        </span>
+                    )}
+                </h3>
+
                 <p className={styles.description}>{description}</p>
 
                 <div className={styles.stack}>

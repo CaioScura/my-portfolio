@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styles from './Projects.module.css'
 import ProjectCard, { type ProjectCardProps } from '../../../../components/project-card/ProjectCard'
+import { FaChevronDown  } from "react-icons/fa6"
 
 const PAGE_SIZE = 3
 
@@ -28,6 +29,15 @@ const projects: ProjectCardProps[] = [
     },
     {
         category: 'Front-end',
+        title: 'Extensão Gatos Flutuantes',
+        description: 'Extensão para navegador que adiciona gatinhos animados em qualquer página da web. Possui diversas animações que eu mesmo criei utilizando software de pixel art, você pode mover os gatos e deixar em qualquer canto da tela.',
+        stack: ['JavaScript', 'HTML', 'CSS', 'Manifest V3'],
+        image: img('img-extensao-gatos.png'),
+        repoUrl: 'https://github.com/CaioScura/petExtension',
+        note: 'Disponível para download em breve!',
+    },
+    {
+        category: 'Front-end',
         title: 'Movie APP Filmes e Séries',
         description: 'Aplicação para explorar filmes, séries e animes, integrada a diferentes APIs para consulta e exibição de conteúdos. O projeto utiliza componentização e separação de serviços, buscando manter o código organizado, reutilizável e escalável.',
         stack: ['React', 'Next.js', 'Typescript', 'SCSS', 'API'],
@@ -36,26 +46,19 @@ const projects: ProjectCardProps[] = [
         liveUrl: 'https://movies-app-caiote.vercel.app/',
     },
     {
-        category: 'Front-end',
-        title: 'Extensão Gatos Flutuantes',
-        description: 'Extensão para navegador que adiciona gatinhos animados em qualquer página da web. Possui diversas animações que eu mesmo criei utilizando software de pixel art, você pode mover os gatos e deixar em qualquer canto da tela.',
-        stack: ['JavaScript', 'HTML', 'CSS', 'Manifest V3'],
-        image: img('img-extensao-gatos.png'),
-        repoUrl: 'https://github.com/CaioScura/petExtension'
-    },
-    {
         category: 'Back-end',
         title: 'Sistema de Gestão de Fornecedores',
         description: 'Sistema desenvolvido em Java para gerenciamento de fornecedores, com operações de cadastro, alteração, exclusão e consulta. A aplicação utiliza JDBC para conexão com o banco de dados e uma interface gráfica para interação com o usuário.',
         stack: ['Java', 'JDBC', 'SQL', 'POO', 'MySQL'],
-        repoUrl: 'https://github.com/CaioScura/prjJavaFornecedoresJDBC'
+        repoUrl: 'https://github.com/CaioScura/prjJavaFornecedoresJDBC',
     },
     {
         category: 'Back-end',
         title: 'API REST em Java',
-        description: 'API REST desenvolvida com Spring Boot para gerenciamento de médicos e pacientes de uma clínica médica.',
+        description: 'Trilha da Alura Java e Spring Boot: Aprenda a criar aplicações com o framework mais amado do mundo Java. API REST desenvolvida com Spring Boot para gerenciamento de médicos e pacientes de uma clínica médica.',
         stack: ['Java', 'SpringBoot', 'MySQL'],
-        repoUrl: 'https://github.com/CaioScura/API-REST-springboot'
+        repoUrl: 'https://github.com/CaioScura/API-REST-springboot',
+        note: 'Em desenvolvimento',
     },
 ]
 
@@ -63,7 +66,18 @@ const projects: ProjectCardProps[] = [
 const Projects = () => {
     const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
     const visibleProjects = projects.slice(0, visibleCount)
-    const hasMore = visibleCount < projects.length
+    const isExpanded = visibleCount >= projects.length
+    const canToggle = projects.length > PAGE_SIZE
+
+    const handleToggle = () => {
+        if (isExpanded) {
+            setVisibleCount(PAGE_SIZE)
+            // volta o scroll pro início da seção, já que a grade encolhe
+            document.getElementById('projetos')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        } else {
+            setVisibleCount((count) => count + PAGE_SIZE)
+        }
+    }
 
     return (
         <section className={styles.projects} id="projetos">
@@ -78,13 +92,10 @@ const Projects = () => {
                     ))}
                 </div>
 
-                {hasMore && (
-                    <button
-                        className={styles.more}
-                        type="button"
-                        onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
-                    >
-                        Ver mais projetos
+                {canToggle && (
+                    <button className={styles.more} type="button" onClick={handleToggle}>
+                        {isExpanded ? 'Ocultar projetos' : 'Ver mais projetos'}
+                        <FaChevronDown className={isExpanded ? styles.moreIconUp : styles.moreIcon} />
                     </button>
                 )}
             </div>

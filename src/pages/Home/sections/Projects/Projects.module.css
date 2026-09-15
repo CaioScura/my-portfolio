@@ -27,7 +27,9 @@
 }
 
 .more {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin: 40px auto 0;
   padding: 14px 28px;
   background: none;
@@ -42,6 +44,15 @@
   border-color: var(--accent-border);
   background: var(--accent-soft);
   color: var(--accent);
+}
+
+.moreIcon,
+.moreIconUp {
+  transition: transform 0.2s ease;
+}
+
+.moreIconUp {
+  transform: rotate(180deg);
 }
 
 @media (max-width: 960px) {

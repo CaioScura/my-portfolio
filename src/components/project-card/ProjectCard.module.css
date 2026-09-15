@@ -48,10 +48,25 @@
 }
 
 .title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin: 0;
   font-size: 22px;
   font-weight: 600;
   color: var(--text);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: var(--text-dimmer);
+  transition: color 0.2s ease;
+}
+
+.info:hover {
+  color: var(--accent);
 }
 
 .description {
