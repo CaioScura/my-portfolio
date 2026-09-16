@@ -1,3 +1,4 @@
+import { useRef, type MouseEvent } from 'react'
 import styles from './Hero.module.css'
 import { FaGithub } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
@@ -7,9 +8,23 @@ import MsgWelcome from '../../../../components/msg-welcome/MsgWelcome'
 import CurriculoPdf from '../../../../assets/images/curriculo/CAIO ROBERTO RUIVO SCURA PEREIRA - desenvolvedor.pdf'
 import Avatar from '../../../../assets/images/perfil-draw.png'
 
+const prefersReducedMotion =
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
 const Hero = () => {
+    const heroRef = useRef<HTMLElement>(null)
+
+    // atualiza a posição do glow roxo do fundo direto no DOM
+    const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
+        if (prefersReducedMotion || !heroRef.current) return
+
+        const rect = heroRef.current.getBoundingClientRect()
+        heroRef.current.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`)
+        heroRef.current.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`)
+    }
+
     return (
-        <section className={styles.hero}>
+        <section ref={heroRef} className={styles.hero} onMouseMove={handleMouseMove}>
             <div className={styles.inner}>
                 <div className={styles.content}>
                     <MsgWelcome welcomeText="Welcome to my portfolio" titleText="Desenvolvedor Full Stack" />

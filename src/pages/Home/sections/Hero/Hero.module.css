@@ -21,6 +21,8 @@
 }
 
 
+/* versão antiga (fixa no canto) — descomente esta e comente a de baixo pra
+   voltar como estava, e também remova o onMouseMove do Hero.tsx
 .hero::before {
   width: 90vw;
   height: 90vw;
@@ -30,6 +32,21 @@
   right: -25vw;
   background: radial-gradient(circle, var(--accent-glow), transparent 68%);
   filter: blur(160px);
+}
+*/
+
+   /* glow roxo de fundo segue a posição do mouse, mudando de posicao em x e y por onMouseMove */
+.hero::before {
+  width: 70vw;
+  height: 70vw;
+  max-width: 900px;
+  max-height: 900px;
+  left: var(--mouse-x, 82%);
+  top: var(--mouse-y, 8%);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--accent-glow), transparent 68%);
+  filter: blur(160px);
+  transition: left 0.5s cubic-bezier(0.22, 1, 0.36, 1), top 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
