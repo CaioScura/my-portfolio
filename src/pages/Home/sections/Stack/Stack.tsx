@@ -16,6 +16,7 @@ import {
     SiFigma,
     SiGit,
 } from 'react-icons/si'
+import { FaJava } from 'react-icons/fa6'
 
 const frontend = [
     { icon: <SiReact />, label: 'React' },
@@ -27,8 +28,9 @@ const frontend = [
 
 const backend = [
     { icon: <SiLaravel />, label: 'Laravel' },
-    { icon: <SiSpringboot />, label: 'Spring Boot', note: 'estudando' },
     { icon: <SiPhp />, label: 'PHP' },
+    { icon: <SiSpringboot />, label: 'Spring Boot', note: 'estudando' },
+    { icon: <FaJava />, label: 'Java' },
 ]
 
 const tools = [

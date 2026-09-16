@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { FiImage, FiInfo } from 'react-icons/fi'
 import { FaGithub } from 'react-icons/fa'
 import { ArrowUpRightIcon } from '../icons/Icons'
@@ -18,18 +19,47 @@ export interface ProjectCardProps {
 
     //texto do tooltip em info ao lado do titulo
     note?: string
+
+    //preview em video, so carrega quando passa o mouse
+    video?: string
 }
 
-const ProjectCard = ({ image, category, title, description, stack, repoUrl, liveUrl, note }: ProjectCardProps) => {
+const ProjectCard = ({ image, category, title, description, stack, repoUrl, liveUrl, note, video }: ProjectCardProps) => {
+    const [hovering, setHovering] = useState(false)
+    const [videoReady, setVideoReady] = useState(false)
+
     return (
-        <article className={styles.card}>
-            {image ? (
-                <img className={styles.image} src={image} alt={title} />
-            ) : (
-                <div className={styles.imagePlaceholder}>
-                    <FiImage />
-                </div>
-            )}
+        <article
+            className={styles.card}
+            onMouseEnter={() => setHovering(true)}
+            onMouseLeave={() => {
+                setHovering(false)
+                setVideoReady(false)
+            }}
+        >
+            <div className={styles.media}>
+                {image ? (
+                    <img className={styles.image} src={image} alt={title} />
+                ) : (
+                    <div className={styles.imagePlaceholder}>
+                        <FiImage />
+                    </div>
+                )}
+
+                {/* so monta o <video> (e só então baixa o arquivo) quando o mouse entra no card */}
+                {video && hovering && (
+                    <video
+                        className={`${styles.video} ${videoReady ? styles.videoVisible : ''}`}
+                        src={video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        onCanPlay={() => setVideoReady(true)}
+                    />
+                )}
+            </div>
 
             <div className={styles.body}>
                 <p className={styles.category}>{category}</p>

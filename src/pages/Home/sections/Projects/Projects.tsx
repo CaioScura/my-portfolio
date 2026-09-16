@@ -11,10 +11,20 @@ const projectImages = import.meta.glob('../../../../assets/images/projetos/*.{pn
     import: 'default',
 }) as Record<string, string>
 
-
-
 const img = (filename: string) =>
     projectImages[`../../../../assets/images/projetos/${filename}`]
+
+
+
+//importacao dos videos de preview dos projetos
+const projectVideos = import.meta.glob('../../../../assets/videos/**/*.{mp4,webm}', {
+    eager: true,
+    import: 'default',
+}) as Record<string, string>
+
+const vid = (path: string) =>
+    projectVideos[`../../../../assets/videos/${path}`]
+
 
 
 //conteudo dos cards dos projetos
@@ -25,6 +35,7 @@ const projects: ProjectCardProps[] = [
         description: 'Mood Player que recomenda e reproduz músicas curtidas do Spotify de acordo com o humor escolhido. O projeto foi desenvolvido para explorar o consumo da API do Spotify, autenticação e configuração da aplicação, além de práticas de deploy com Docker e Render.',
         stack: ['Bootstrap', 'CSS', 'JavaScript', 'Laravel', 'OAuth 2.0', 'Spotify Web API'],
         image: img('img-prj-api-spotify.png'),
+        video: vid('prj-spotify/video-mood-layer-spotify.mp4'),
         repoUrl: 'https://github.com/CaioScura/API_Spotify',
     },
     {
@@ -33,6 +44,7 @@ const projects: ProjectCardProps[] = [
         description: 'Extensão para navegador que adiciona gatinhos animados em qualquer página da web. Possui diversas animações que eu mesmo criei utilizando software de pixel art, você pode mover os gatos e deixar em qualquer canto da tela.',
         stack: ['JavaScript', 'HTML', 'CSS', 'Manifest V3'],
         image: img('img-extensao-gatos.png'),
+        video: vid('prj-gatos-flutuantes/prj-gatos-flutuantes.mp4'),
         repoUrl: 'https://github.com/CaioScura/petExtension',
         note: 'Disponível para download em breve!',
     },
@@ -42,6 +54,7 @@ const projects: ProjectCardProps[] = [
         description: 'Aplicação para explorar filmes, séries e animes, integrada a diferentes APIs para consulta e exibição de conteúdos. O projeto utiliza componentização e separação de serviços, buscando manter o código organizado, reutilizável e escalável.',
         stack: ['React', 'Next.js', 'Typescript', 'SCSS', 'API'],
         image: img('img-movies-app.png'),
+        video: vid('prj-movies-app/movies-app-caiote.mp4'),
         repoUrl: 'https://github.com/CaioScura/movies-app',
         liveUrl: 'https://movies-app-caiote.vercel.app/',
     },
