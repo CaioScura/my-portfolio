@@ -5,6 +5,7 @@ import { CiLinkedin } from "react-icons/ci";
 import { IoIosContact } from 'react-icons/io';
 import { TiDocumentText } from 'react-icons/ti';
 import MsgWelcome from '../../../../components/msg-welcome/MsgWelcome'
+import FlipCard from '../../../../components/flip-card/FlipCard'
 import CurriculoPdf from '../../../../assets/images/curriculo/CAIO ROBERTO RUIVO SCURA PEREIRA - desenvolvedor.pdf'
 import Avatar from '../../../../assets/images/perfil-draw.png'
 
@@ -74,7 +75,18 @@ const Hero = () => {
                 </div>
 
                 <div className={styles.divPhoto}>
-                    <img className={styles.photo} src={Avatar} alt="Caio Scura" />
+                    <div className={styles.photoFrame}>
+                        <FlipCard
+                            ariaLabel="Virar cartão entre a foto e uma saudação"
+                            front={<img src={Avatar} alt="Caio Scura" />}
+                            back={
+                                <div className={styles.helloBack}>
+                                    <p className={styles.helloEyebrow}>Olá, eu sou</p>
+                                    <p className={styles.helloName}>Caio Scura</p>
+                                </div>
+                            }
+                        />
+                    </div>
                 </div>
             </div>
         </section>
