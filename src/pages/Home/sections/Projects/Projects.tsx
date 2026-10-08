@@ -60,6 +60,15 @@ const projects: ProjectCardProps[] = [
     },
     {
         category: 'Back-end',
+        title: 'QR Code Generator',
+        description: 'Sistema desenvolvido em Java para geração de códigos QR, com integração a serviços de armazenamento em nuvem. A aplicação utiliza Spring Boot para o desenvolvimento da API e Google ZXing para a geração dos códigos.',
+        stack: ['Java', 'Spring Boot', 'Docker', 'AWS SDK (S3)', 'Google ZXing'],
+        image: img('img-qrcode-generator.png'),
+        video: vid('prj-qrcode-generator/video-qrcode-generator.mp4'),
+        repoUrl: 'https://github.com/CaioScura/qrcode-generator',
+    },
+    {
+        category: 'Back-end',
         title: 'Sistema de Gestão de Fornecedores',
         description: 'Sistema desenvolvido em Java para gerenciamento de fornecedores, com operações de cadastro, alteração, exclusão e consulta. A aplicação utiliza JDBC para conexão com o banco de dados e uma interface gráfica para interação com o usuário.',
         stack: ['Java', 'JDBC', 'SQL', 'POO', 'MySQL'],
