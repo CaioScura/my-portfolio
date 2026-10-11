@@ -80,19 +80,20 @@ const projects: ProjectCardProps[] = [
     },
     {
         category: 'Back-end',
-        title: 'Sistema de Gestão de Fornecedores',
-        description: 'Sistema desenvolvido em Java para gerenciamento de fornecedores, com operações de cadastro, alteração, exclusão e consulta. A aplicação utiliza JDBC para conexão com o banco de dados e uma interface gráfica para interação com o usuário.',
-        stack: ['Java', 'JDBC', 'SQL', 'POO', 'MySQL'],
-        repoUrl: 'https://github.com/CaioScura/prjJavaFornecedoresJDBC',
-    },
-    {
-        category: 'Back-end',
         title: 'API REST em Java',
         description: 'Trilha da Alura Java e Spring Boot: Aprenda a criar aplicações com o framework mais amado do mundo Java. API REST desenvolvida com Spring Boot para gerenciamento de médicos e pacientes de uma clínica médica.',
         stack: ['Java', 'SpringBoot', 'MySQL'],
         repoUrl: 'https://github.com/CaioScura/API-REST-springboot',
         note: 'Em desenvolvimento',
     },
+    {
+        category: 'Back-end',
+        title: 'Sistema de Gestão de Fornecedores',
+        description: 'Sistema desenvolvido em Java para gerenciamento de fornecedores, com operações de cadastro, alteração, exclusão e consulta. A aplicação utiliza JDBC para conexão com o banco de dados e uma interface gráfica para interação com o usuário.',
+        stack: ['Java', 'JDBC', 'SQL', 'POO', 'MySQL'],
+        repoUrl: 'https://github.com/CaioScura/prjJavaFornecedoresJDBC',
+    },
+    
 ]
 
 
