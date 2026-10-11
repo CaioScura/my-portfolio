@@ -48,6 +48,17 @@ const projects: ProjectCardProps[] = [
         repoUrl: 'https://github.com/CaioScura/petExtension',
         note: 'Disponível para download em breve!',
     },
+
+    {
+        category: 'Python',
+        title: 'Expression Lab',
+        description: 'Aplicação de visão computacional que utiliza a webcam para detectar gestos com as mãos e expressões faciais em tempo real. O projeto busca reconhecer gestos personalizados e associá-los a imagens e GIFs, explorando o processamento de imagens e a detecção de características faciais e manuais.',
+        stack: ['Python', 'OpenCV', 'MediaPipe', 'NumPy'],
+        image: img('img-expression-lab.png'),
+        video: vid('prj-expression-lab/video-expression-lab.mp4'),
+        repoUrl: 'https://github.com/CaioScura/expression-lab',
+    },
+
     {
         category: 'Front-end',
         title: 'Movie APP Filmes e Séries',
