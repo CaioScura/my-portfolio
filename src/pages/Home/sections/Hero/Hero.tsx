@@ -1,6 +1,6 @@
 import { useRef, type MouseEvent } from 'react'
 import styles from './Hero.module.css'
-import { FaGithub } from "react-icons/fa";
+import {FaGithub, FaInstagram} from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import { IoIosContact } from 'react-icons/io';
 import { TiDocumentText } from 'react-icons/ti';
@@ -57,9 +57,10 @@ const Hero = () => {
                             LinkedIn
                         </a>
 
-                        <a className={styles.social} href="#contato">
-                            <IoIosContact aria-hidden />
-                            Contato
+                        <a className={styles.social}
+                           href="https://www.instagram.com/caioscura__">
+                            <FaInstagram aria-hidden />
+                            Instagram
                         </a>
 
                         <a
