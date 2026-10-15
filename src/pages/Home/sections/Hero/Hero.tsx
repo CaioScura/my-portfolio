@@ -2,7 +2,7 @@ import { useRef, type MouseEvent } from 'react'
 import styles from './Hero.module.css'
 import {FaGithub, FaInstagram} from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
-import { IoIosContact } from 'react-icons/io';
+// import { IoIosContact } from 'react-icons/io';
 import { TiDocumentText } from 'react-icons/ti';
 import MsgWelcome from '../../../../components/msg-welcome/MsgWelcome'
 import FlipCard from '../../../../components/flip-card/FlipCard'
